@@ -52,7 +52,7 @@ const Registro = () => {
         toast.error( "Nombre de ususario ya existe, por favor ingrese uno distinto");
         
       }else{
-        toast.error("error del servidor");
+        toast.error("El ususario debe tener al menos 3 caracteres y la contraseña 6, por favor intente nuevamente ");
         return
 
       }
