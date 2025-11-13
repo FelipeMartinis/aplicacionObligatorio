@@ -46,10 +46,8 @@ const Registro = () => {
 
       if (response.ok) {
         localStorage.setItem("token", data.token);
-        localStorage.setItem("userNameLog", data.username);
-        localStorage.setItem("idLogueado", data.userId);
         toast.success("Usuario registrado correctamente");
-        navigate("/dashboard");
+        navigate("/");
       } else {
         toast.error(data?.message || "Error al registrarse, verifique los datos e intente nuevamente");
       }
