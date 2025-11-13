@@ -48,8 +48,13 @@ const Registro = () => {
         localStorage.setItem("token", data.token);
         toast.success("Usuario registrado correctamente");
         navigate("/");
-      } else {
-        toast.error(data?.message || "Error al registrarse, verifique los datos e intente nuevamente");
+      } else if(response.status === 409){
+        toast.error( "Nombre de ususario ya existe, por favor ingrese uno distinto");
+        
+      }else{
+        toast.error("error del servidor");
+        return
+
       }
     } catch (error) {
       console.error("Error:", error);

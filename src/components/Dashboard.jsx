@@ -5,6 +5,7 @@ import Jugadores from "./dashboard/Jugadores";
 import Informe from "./dashboard/Informe"
 import CambioPlan from "./dashboard/CambioPlan";
 import Grafico from "./dashboard/Grafico";
+import { toast } from "react-toastify";
 const Dashboard = () => {
 
     const navigate = useNavigate();
@@ -20,6 +21,7 @@ const Dashboard = () => {
     const cerrarSesion = () => {
         localStorage.clear();
         navigate("/")
+        toast.success("Sesion Cerrada")
 
     }    
     return(
