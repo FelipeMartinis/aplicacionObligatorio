@@ -24,6 +24,8 @@ const Jugador = ({_id, nombre, edad, nacionalidad, posicion, habilidadPrincipal,
     const idLogueado = localStorage.getItem('idLogueado')
      const dispatch = useDispatch();
     const navigate = useNavigate();
+
+
 //Eliminar jugador
     const handleEliminar = async (_id) => {
   try {
@@ -34,7 +36,6 @@ const Jugador = ({_id, nombre, edad, nacionalidad, posicion, habilidadPrincipal,
       },
     });
     if (response.ok) {
-      
       dispatch(eliminarJugador(_id));
       navigate("/dashboard"),
       toast.success("Jugador Eliminado")
@@ -69,11 +70,11 @@ const Jugador = ({_id, nombre, edad, nacionalidad, posicion, habilidadPrincipal,
       });
       if (response.ok) {
         const updatedJugador = await response.json();
-        // Actualizar el estado local y en Redux si fuera necesario
+        
         dispatch(actualizarJugador(updatedJugador),
         navigate("/dashboard"),
         toast.success("jugador editado correctamente")
-        // _id, newNombre, newEdad, newNacionalidad,newPosicion, newHabilidadPrincipal, newValorDeMercado, newSalarioEstimado, idLogueado, fechaISO
+        
       );
         setEditing(false);
       } else {

@@ -17,7 +17,6 @@ const FormCrear = () => {
   // const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    // Agrego las propiedades adicionales
     const fecha = new Date().toISOString();
 
     try {

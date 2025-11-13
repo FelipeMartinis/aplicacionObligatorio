@@ -55,11 +55,11 @@ const Grafico = () => {
         label: 'Jugadores por posición',
         data: Object.values(datosPorPosicion),
         backgroundColor: [
-          'rgba(59, 130, 246, 0.6)',   // azul
-          'rgba(16, 185, 129, 0.6)',   // verde
-          'rgba(245, 158, 11, 0.6)',   // dorado
-          'rgba(239, 68, 68, 0.6)',    // rojo
-          'rgba(139, 92, 246, 0.6)',   // violeta
+          'rgba(59, 130, 246, 0.6)',  
+          'rgba(16, 185, 129, 0.6)',   
+          'rgba(245, 158, 11, 0.6)',   
+          'rgba(239, 68, 68, 0.6)',    
+          'rgba(139, 92, 246, 0.6)',   
         ],
         borderColor: '#fff',
         borderWidth: 2,

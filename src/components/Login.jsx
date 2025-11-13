@@ -11,7 +11,6 @@ const Login = () => {
   const ingresar = async (e) => {
     e.preventDefault();
 
-    // Si por alguna razón el botón no se deshabilitó, también chequeamos acá
     if (!usuario.trim() || !contraseña.trim()) {
       toast.warning("Completa ambos campos antes de continuar");
       return;
@@ -51,27 +50,12 @@ const Login = () => {
       <h1>Login</h1>
 
       <label htmlFor="txtUser" className="label-input">Usuario</label>
-      <input
-        type="text"
-        id="txtUser"
-        className="input-field"
-        value={usuario}
-        onChange={(e) => setUsuario(e.target.value)}
-      />
+      <input type="text" id="txtUser" className="input-field" value={usuario} onChange={(e) => setUsuario(e.target.value)}/>
 
       <label htmlFor="txtPassword" className="label-input">Contraseña</label>
-      <input
-        type="password"
-        id="txtPassword"
-        className="input-field"
-        value={contraseña}
-        onChange={(e) => setContraseña(e.target.value)}
-      />
+      <input type="password" id="txtPassword" className="input-field" value={contraseña} onChange={(e) => setContraseña(e.target.value)}/>
 
-      <button
-        className="btn-primary"
-        onClick={ingresar}
-        disabled={!camposCompletos}
+      <button className="btn-primary" onClick={ingresar} disabled={!camposCompletos}
         style={{
           opacity: camposCompletos ? 1 : 0.5,
           cursor: camposCompletos ? "pointer" : "not-allowed",
@@ -79,7 +63,6 @@ const Login = () => {
       >
         Ingresar
       </button>
-
       <p>¿No tenés cuenta? <Link to="/registro">Registrate</Link></p>
     </div>
   );

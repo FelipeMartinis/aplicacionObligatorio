@@ -4,13 +4,11 @@ import Grafico from './Grafico';
 const Informe = () => {
   const token = localStorage.getItem('token');
 
-  // 👇 Estados locales (independientes del Redux global)
   const [usuarios, setUsuarios] = useState([]);
   const [jugadores, setJugadores] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // 🔁 Efecto: carga usuarios y todos los jugadores de la BD
   useEffect(() => {
 
     const token = localStorage.getItem("token");
@@ -54,12 +52,8 @@ const Informe = () => {
 
     fetchDatos();
 
-    // 🔄 Repetir cada 10 segundos para mantener el informe actualizado
-    /* const intervalo = setInterval(fetchDatos, 5000);
-    return () => clearInterval(intervalo); */
-  }/* , [token] */);
+  });
 
-  // 📊 Calcular el informe según los datos actuales
   const informe = useMemo(() => {
     if (!Array.isArray(jugadores) || !Array.isArray(usuarios))
       return { plus: 0, premium: 0, total: 0 };
@@ -69,11 +63,7 @@ const Informe = () => {
 
     jugadores.forEach((j) => {
       const usuario = usuarios.find(
-        (u) =>
-          u._id === j.usuario ||
-          u._id === j.usuario?._id ||
-          u._id === j.usuario?.$oid
-      );
+        (u) => u._id === j.usuario || u._id === j.usuario?._id || u._id === j.usuario?.$oid);
       if (usuario?.plan === 'plus') plus++;
       if (usuario?.plan === 'premium') premium++;
     });

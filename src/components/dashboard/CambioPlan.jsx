@@ -9,7 +9,7 @@ const CambioPlan = () => {
 
   const userId = localStorage.getItem('idLogueado');
 
-  // Fetch al cargar
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
   if (!token) {

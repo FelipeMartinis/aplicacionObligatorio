@@ -10,11 +10,8 @@ const Registro = () => {
   const [repetirContraseña, setRepetirContraseña] = useState("");
   const navigate = useNavigate();
 
-  // Condición que habilita el botón: usuario no vacío y contraseñas no vacías y coinciden
-  const puedeEnviar =
-    usuario.trim().length > 0 &&
-    contraseña.length > 0 &&
-    contraseña === repetirContraseña;
+  
+  const puedeEnviar = usuario.trim().length > 0 &&contraseña.length > 0 &&contraseña === repetirContraseña;
 
   const registrar = async (e) => {
     e.preventDefault();

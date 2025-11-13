@@ -23,8 +23,6 @@ const Jugadores = () => {
         });
         if (response.ok) {
           const data = await response.json();
-             
-          // Aquí puedes dispatch una acción para guardar los jugadores en redux
           dispatch(guardarJugadores(data));
         } else {
           console.error("Error al cargar jugadores");
@@ -58,8 +56,6 @@ const Jugadores = () => {
         if (filtroFecha === "todo") return true;
         if (filtroFecha === "ultimaSemana") return diffDias <= 7;
         if (filtroFecha === "ultimoMes") return diffDias <= 30;
-        console.log('jugadores cargados:', jugadores);
-console.log('jugadores filtrados:', jugadoresFiltrados);
         return true;
 
 });

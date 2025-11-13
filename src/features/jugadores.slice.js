@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  Jugadores: [], // Aquí guardamos la lista
+  Jugadores: [],
 };
 
 const jugadoresSlice = createSlice({
@@ -18,7 +18,7 @@ const jugadoresSlice = createSlice({
     actualizarJugador: (state, action) => {
       const index = state.Jugadores.findIndex(j => j._id === action.payload._id);
       if (index !== -1) {
-        state.Jugadores[index] = action.payload; // reemplaza los datos
+        state.Jugadores[index] = action.payload; 
       }},
         agregarJugador: (state, action) => {
         state.Jugadores = [...state.Jugadores, action.payload];
