@@ -1,0 +1,553 @@
+/* Estilo general para el contenedor del formulario */
+.div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #642b14; 
+}
+
+
+/* Título */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #374151; /* gris oscuro */
+}
+
+/* Etiquetas */
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Inputs */
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover y focus para inputs */
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: #3b82f6; /* azul */
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+/* Botón */
+button {
+  width: 100%;
+  padding: 14px 20px;
+  margin-top: 20px;
+  background-color: #3b82f6; /* azul */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #2563eb;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+/* Enlace */
+p {
+  text-align: center;
+  margin-top: 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #6b7280; /* gris medio */
+}
+
+p a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor principal que agrupa todo */
+.section-jugadores {
+  max-width: 1500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #cbeeee;
+}
+
+/* Título en la parte superior */
+.titulo {
+  text-align: center;        /* centrado horizontal */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #31118b;
+}
+
+/* Filtro debajo del título, centrado */
+.filtro {
+  display: flex;
+  justify-content: flex-end; /* Cambiar a 'flex-end' para alinear a la derecha */
+  margin-bottom: 20px;
+}
+
+
+/* Lista de jugadores en fila o columna, según diseño previo */
+.lista-jugadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  
+}
+
+/* Tarjeta individual del jugador */
+.jugador {
+  width: 280px;
+  background-color: #ece8fc;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover (levitación sutil) */
+.jugador:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Información del jugador */
+.jugador p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #1f2937;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Nombre del jugador en más grande */
+.jugador p:first-of-type {
+  font-weight: 700;
+  font-size: 18px;
+  color: #143464;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+/* Contenedor de botones de acción */
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Botones generales */
+.acciones button {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Botón de editar */
+.btn-editar {
+  background-color: #a0b9e2;
+  color: #fff;
+}
+
+.btn-editar:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Botón de eliminar */
+.acciones button:last-child {
+  background-color: #e78d8d;
+  color: #fff;
+}
+
+.acciones button:last-child:hover {
+  background-color: #e78d8d;
+  transform: scale(1.05);
+}
+
+/* Sombra sutil al hacer clic */
+.acciones button:active {
+  transform: scale(0.97);
+}
+
+
+/*encabezado del dashboard*/
+.encabezado {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;            
+  padding: 10px 20px;            
+  background-color: #cbeeee;         
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.encabezado h1 {
+  flex: 1;                             
+  text-align: center;        
+  margin: 0;                        
+  font-size: 2rem;             
+}
+
+.encabezado input[type="button"] {
+  margin-left: auto;                   
+}
+
+/*Tarjeta editar Jugador*/
+
+.editar.jugador {
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editar.jugador input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.editar.jugador input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59,130,246,0.2);
+  outline: none;
+}
+
+.editar.jugador button {
+  width: 48%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #8ca5ce;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.editar.jugador button:hover {
+  background-color: #2563eb;
+  box-shadow: 0 4px 8px rgba(37,99,235,0.2);
+}
+
+.editar.jugador button:nth-of-type(2) {
+  background-color: #dfa3a3;
+}
+
+.editar.jugador button:nth-of-type(2):hover {
+  background-color: #dc2626;
+}
+
+
+/* tarjeta de Formulario crear jugador
+
+/* Contenedor principal del formulario para agregar jugadores */
+.agregar-jugador {
+  width: 100%;
+  max-width: 700px; /* más ancho que las tarjetas de jugador */
+  padding: 30px 40px;
+  margin: 20px auto; /* centrado */
+  background-color: #d8ecff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.agregar-jugador:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+.agregar-jugador h3 {
+  color: #143464;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Formulario */
+.agregar-jugador form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* espacio entre inputs */
+}
+
+/* Inputs y select */
+.agregar-jugador input,
+.agregar-jugador select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.agregar-jugador input:focus,
+.agregar-jugador select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+/* Botón principal */
+.agregar-jugador button {
+  padding: 14px;
+  margin-top: 15px;
+  background-color: #3b82f6;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.agregar-jugador button:hover {
+  background-color: #2563eb;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+
+/* Contenedor general del informe */
+.informe {
+  width: 100%;
+  min-height: 100vh; /* ocupa toda la altura visible */
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* fondo suave con degradado */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Tarjeta central del informe */
+.informe-contenido {
+  width: 90%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 50px 60px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.informe-contenido:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Título principal */
+.informe h2 {
+  color: #143464;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Párrafos de datos */
+.informe p {
+  font-size: 1.4rem;
+  color: #1f2937;
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+/* Colores destacados */
+.informe p:nth-of-type(2) {
+  color: #10b981; /* verde (Plus) */
+  font-weight: 600;
+}
+
+.informe p:nth-of-type(3) {
+  color: #f59e0b; /* dorado (Premium) */
+  font-weight: 600;
+}
+
+
+
+/* Contenedor principal Cambio de plan */
+.cambiar-plan {
+  width: 100vw; /* ocupa todo el ancho */
+  height: 100vh; /* ocupa toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center; /* centra horizontalmente */
+  background: linear-gradient(135deg, #fff8e1, #fde68a); /* fondo dorado claro */
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Efecto suave al pasar el mouse */
+.cambiar-plan:hover {
+  transform: none;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.cambiar-plan h3 {
+  font-size: 2.5rem;
+  color: #b45309; /* dorado oscuro */
+  margin-bottom: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cambiar-plan p {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  font-size: 1.2rem;
+  color: #78350f; /* marrón/dorado oscuro */
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Botón principal */
+.cambiar-plan button {
+  padding: 18px 36px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b); /* degradado dorado */
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.cambiar-plan button:hover {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  box-shadow: 0 10px 24px rgba(245, 158, 11, 0.4);
+  transform: scale(1.07);
+}
+
+.cambiar-plan button:active {
+  transform: scale(0.97);
+}
+
+/* Estado deshabilitado */
+.cambiar-plan button:disabled {
+  background: #d1d5db; /* gris claro */
+  color: #6b7280;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cambiar-plan {
+    padding: 20px;
+  }
+
+  .cambiar-plan h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+
+
+  .cambiar-plan button {
+    width: 90%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+
+.grafico-contenedor {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #ffffff;
+  
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grafico-contenedor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(134, 121, 121, 0.15);
+}
+
+.grafico-loading,
+.grafico-error {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 50px;
+  color: #4b5563;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .grafico-contenedor {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+
+
